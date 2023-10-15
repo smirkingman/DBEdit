@@ -1,0 +1,9 @@
+# Name, title, datatype, help, default, min, max
+# 0     1      2         3     4        5    6 
+Server,SQL Server,string
+Database,Database name,string
+User,User ID,string
+Password,Password,password
+Tooltips,Show Tooltips,boolean,,true
+PageSize,Page size,integer,Number of rows to fetch when paging,100,50,1000
+MaxColWidth,Maximum column width,integer,Limit column autosizing not to exceeed this,300,100,2000

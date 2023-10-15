@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D7C29A9-EF23-439F-ACC8-6C419C141B77}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>DBEdit.My.MyApplication</StartupObject>
+    <RootNamespace>DBEdit</RootNamespace>
+    <AssemblyName>DBEdit</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DBEdit.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DBEdit.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Text</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>Off</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.10.50.1600.1\lib\Net20\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MoreLinq, Version=3.4.2.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
+      <HintPath>..\packages\morelinq.3.4.2\lib\net462\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.2.4\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.3.2.26\lib\net462\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.Core.3.2.26\lib\net462\protobuf-net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CalendarColumn.vb" />
+    <Compile Include="Controls\Navigator.Designer.vb">
+      <DependentUpon>Navigator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Navigator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeCell.vb" />
+    <Compile Include="ErrorHandling\ErrorHandlers.vb" />
+    <Compile Include="ErrorHandling\ErrorUI.Designer.vb">
+      <DependentUpon>ErrorUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandling\ErrorUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formatters\TableToClipboard.vb" />
+    <Compile Include="Formatters\TableToExcel.vb" />
+    <Compile Include="Formatters\TableToHTML.vb" />
+    <Compile Include="Formatters\TableToTabbed.vb" />
+    <Compile Include="Forms\EditUI.Designer.vb">
+      <DependentUpon>EditUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FilterUI.Designer.vb">
+      <DependentUpon>FilterUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FilterUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginUI.Designer.vb">
+      <DependentUpon>LoginUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PreferencesUI.Designer.vb">
+      <DependentUpon>PreferencesUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PreferencesUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatisticsUI.Designer.vb">
+      <DependentUpon>StatisticsUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StatisticsUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridView\Context.vb" />
+    <Compile Include="GridView\Grid.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridView\GridButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridView\GridCheckBoxCol.vb" />
+    <Compile Include="GridView\GridCol.vb" />
+    <Compile Include="GridView\GridColCollection.vb" />
+    <Compile Include="GridView\GridMenuItem.vb" />
+    <Compile Include="GridView\GridRow.vb" />
+    <Compile Include="GridView\GridRowCollection.vb" />
+    <Compile Include="GridView\GridTextBoxCol.vb" />
+    <Compile Include="GridView\ShowRowCounts.vb" />
+    <Compile Include="Main\Builders.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainLoad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MenuColumns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MenuCells.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\GridEvents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MenuMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MenuRows.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MenuTabs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Navigator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\MainUI.Designer.vb">
+      <DependentUpon>MainUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MainUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Tooltip.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\UIEvents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Cache.vb" />
+    <Compile Include="Model\Column.vb" />
+    <Compile Include="Model\Converter.vb" />
+    <Compile Include="Model\Database.vb" />
+    <Compile Include="Model\Filter.vb" />
+    <Compile Include="Model\Fundamental.vb" />
+    <Compile Include="Model\InformationSchema.vb" />
+    <Compile Include="Model\MessageEventArgs.vb" />
+    <Compile Include="Model\Model.vb" />
+    <Compile Include="Model\Recent.vb" />
+    <Compile Include="Model\Server.vb" />
+    <Compile Include="Model\SQL.vb" />
+    <Compile Include="Model\SQLType.vb" />
+    <Compile Include="Model\State.vb" />
+    <Compile Include="Model\Table.vb" />
+    <Compile Include="Model\World.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utilities\Aargh.vb" />
+    <Compile Include="Utilities\Between.vb" />
+    <Compile Include="Utilities\Box.vb" />
+    <Compile Include="Utilities\ByteArray.vb" />
+    <Compile Include="Utilities\Caller.vb" />
+    <Compile Include="Utilities\Clamp.vb" />
+    <Compile Include="Utilities\ColourToHex.vb" />
+    <Compile Include="Utilities\Compact.vb" />
+    <Compile Include="Utilities\Constants.vb" />
+    <Compile Include="Utilities\Extensions.vb" />
+    <Compile Include="Utilities\GetDefault.vb" />
+    <Compile Include="Utilities\IfEmpty.vb" />
+    <Compile Include="Utilities\IsDesignerHosted.vb" />
+    <Compile Include="Utilities\isEmpty.vb" />
+    <Compile Include="Utilities\NothingIfEmpty.vb" />
+    <Compile Include="Utilities\SizeOf.vb" />
+    <Compile Include="Utilities\PrettyXML.vb" />
+    <Compile Include="Utilities\ShowBox.vb" />
+    <Compile Include="Utilities\SingleQuote.vb" />
+    <Compile Include="Utilities\SqlReader.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\Navigator.resx">
+      <DependentUpon>Navigator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorHandling\ErrorUI.resx">
+      <DependentUpon>ErrorUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditUI.resx">
+      <DependentUpon>EditUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FilterUI.resx">
+      <DependentUpon>FilterUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginUI.resx">
+      <DependentUpon>LoginUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PreferencesUI.resx">
+      <DependentUpon>PreferencesUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatisticsUI.resx">
+      <DependentUpon>StatisticsUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MainUI.resx">
+      <DependentUpon>MainUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Preferences\variables.define" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\accept.png" />
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\filter.png" />
+    <None Include="Resources\filtercontains.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filterequals.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filtergreaterthan.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filterin.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filterlessthan.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filterlike.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filternotequals.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filternotnull.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filternull.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\filterstartswith.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\injuryscream.wav" />
+    <Content Include="Resources\Logo16.ico" />
+    <Content Include="Resources\Logo16.png" />
+    <Content Include="Resources\Logo32.ico" />
+    <Content Include="Resources\Logo32.png" />
+    <Content Include="Resources\resultset_first.png" />
+    <Content Include="Resources\resultset_last.png" />
+    <Content Include="Resources\resultset_next.png" />
+    <Content Include="Resources\resultset_previous.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
